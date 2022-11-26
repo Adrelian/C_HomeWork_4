@@ -29,26 +29,26 @@
 // 82 -> 10
 // 9012 -> 12
 
-void findSumNumber()
-{
-    Console.Write("Введите число: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    {
-        // Дробив число справа на лево и складываем эти числа
-        int sum = 0; //сумма цифр
-        int newNumber = number; //начало отсчета
-        while (number > 0)
-        {
-            int rightNumber = number % 10; //правое число (1234 -> 4)
-            newNumber = number; // оставшееся число (123)
-            number = number / 10; //Уменьшаем кол-во разрядов (1234 -> 123)
-            sum = sum + rightNumber; //общая сумма (0 + 4)
-        }
-        Console.WriteLine($"Сумма цифр: {sum}");
-    }
-}
+// void findSumNumber()
+// {
+//     Console.Write("Введите число: ");
+//     int number = Convert.ToInt32(Console.ReadLine());
+//     {
+//         // Дробив число справа на лево и складываем эти числа
+//         int sum = 0; //сумма цифр
+//         int newNumber = number; //начало отсчета
+//         while (number > 0)
+//         {
+//             int rightNumber = number % 10; //правое число (1234 -> 4)
+//             newNumber = number; // оставшееся число (123)
+//             number = number / 10; //Уменьшаем кол-во разрядов (1234 -> 123)
+//             sum = sum + rightNumber; //общая сумма (0 + 4)
+//         }
+//         Console.WriteLine($"Сумма цифр: {sum}");
+//     }
+// }
 
-findSumNumber();
+// findSumNumber();
 
 
 
@@ -57,3 +57,25 @@ findSumNumber();
 
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
+
+int[] CreatArray()
+{
+    int[] newArray = new int [8];
+    for (int i = 0; i < 8; i++)
+    {
+        newArray[i] = new Random().Next(1,100);
+    }
+    return newArray;
+}
+
+void ShowArray(int [] arr)
+{
+    Console.Write("Массив -> ");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
+    }
+}
+
+int [] myArr = CreatArray();
+ShowArray(myArr);
